@@ -1,0 +1,487 @@
+                             Documentation  java Scipt
+_ Déclaration de variables:
+ En JavaScript, vous pouvez déclarer des variables en utilisant:
+ -Let :  .La variable est limitée au bloc (entre {}) dans lequel elle est déclarée.
+        
+         .Ne peut pas être redéclarée dans le même scope.
+         Doit être déclarée avant d'être utilisée.
+  .exemple:
+  let i = 15;
+console.log(i); // Affiche : 15
+
+i = 30; // Réaffectation
+console.log(i); // Affiche : 30
+
+if (true) {
+    let i = 50; // Variable différente dans ce bloc
+    console.log(i); // Affiche : 50
+}
+console.log(i); // Affiche : 30 (valeur en dehors du bloc)
+ 
+ -var: .La variable est soit globale (si déclarée à l'extérieur d'une fonction) soit locale à la fonction dans laquelle elle est définie.
+        .Peut être redéclarée dans le même scope.
+        .Peut être utilisée avant sa déclaration (avec la valeur undefined).
+    .exemple:
+    var x = 10; // Déclaration et initialisation
+console.log(x); // Affiche : 10
+
+x = 20; // Réaffectation
+console.log(x); // Affiche : 20
+ 
+ -const: .Limité au bloc (comme let).
+         .Ne peut pas être réassignée après sa déclaration.
+         .Les objets et tableaux déclarés avec const peuvent être modifiés, mais leur référence ne peut pas changer.
+    .exemple:
+    const z = 40;
+console.log(z); // Affiche : 40
+
+// z = 50; // Erreur : Assignment to constant variable
+
+const arr = [1, 2, 3];
+arr.push(4); // Modification du contenu
+console.log(arr); // Affiche : [1, 2, 3, 4]
+_type de données primitives  et objets:
+    En JavaScript, il existe deux grandes catégories de types de données : primitives et objets.
+    -types de données primitives:
+      .string:(chaine de caractéres)
+        let name = "ikram";
+      .number:(nombre)
+        let age = 23;
+      .boolean:(booléen)
+        let isLoggedIn = false;
+      .Undefined: Une variable déclarée mais non initialisée a la valeur undefined.
+          let x; // Non initialisé
+          console.log(x); // Affiche : undefined
+     .null:Représente une absence volontaire de valeur.
+          let M = null;
+
+
+-Types de données objets:
+    Les objets sont des collections complexes de propriétés et méthodes. Contrairement aux primitives, ils sont mutables (leurs valeurs peuvent être modifiées) et stockés par référence.
+
+   Exemples de types objets :
+      .Objets natifs :
+         Object : Structure de base pour regrouper des données.
+            let user = { name: "John", age: 30 };
+        Array : Tableau pour stocker des collections ordonnées.
+               let numbers = [1, 2, 3, 4];
+        Fonctions (Functions) :Les fonctions sont également des objets.
+
+_Les  opérateurs en java script:
+    JavaScript propose plusieurs types d'opérateurs, parmi lesquels : arithmétiques, de comparaison et logiques.
+      . Les opérateurs arithmétiques: Ils permettent d'effectuer des calculs mathématiques.
+
++	Addition	5 + 3	8
+-	Soustraction	5 - 3	2
+*	Multiplication	5 * 3	15
+/	Division	6 / 3	2
+%	Modulo (reste de division)	7 % 3	1
+**	Exponentiation	2 ** 3	8
+++	Incrémentation	let x = 5; x++	6
+--	Décrémentation	let x = 5; x--	4
+.exemple:
+
+let a = 10, b = 3;
+console.log(a + b);  // Addition : 13
+console.log(a % b);  // Modulo : 1
+console.log(a ** 2); // Exponentiation : 100
+
+
+     . Les opérateurs de comparaison:Ils comparent deux valeurs et retournent un booléen (true ou false).
+
+==	Égalité (valeur)	5 == "5"	true
+===	Égalité stricte (valeur et type)	5 === "5"	false
+!=	Différence (valeur)	5 != "6"	true
+!==	Différence stricte	5 !== "5"	true
+>	Supérieur	7 > 5	true
+<	Inférieur	3 < 5	true
+>=	Supérieur ou égal	5 >= 5	true
+<=	Inférieur ou égal	4 <= 5	true
+
+.Exemple:
+let x = 5, y = "5";
+console.log(x == y);   // true (égalité de valeur)
+console.log(x === y);  // false (valeurs égales mais types différents)
+console.log(x !== y);  // true (types différents)
+
+
+    . Les opérateurs logiques: Ils permettent de combiner ou d'inverser des conditions.
+
+&&	ET logique (and)	(5 > 3) && (4 > 2)	true
+`		`	OU logique (or)
+!	NON logique (not)	!(5 > 3)	false
+
+.Exemple:
+let isSunny = true, hasUmbrella = false;
+console.log(isSunny && hasUmbrella); // false (ET logique)
+console.log(isSunny || hasUmbrella); // true (OU logique)
+console.log(!isSunny);               // false (NON logique)
+
+
+_Les boucles en JavaScript:
+    Les boucles permettent d'exécuter une série d'instructions de manière répétée, en fonction d'une condition donnée. Voici les principales boucles en JavaScript :
+          . La boucle for:Elle est utilisée lorsque vous savez à l'avance combien de fois l'exécution doit se répéter.
+
+ .Syntaxe:
+ for (initialisation; condition; incrémentation) {
+    // Instructions
+}
+.Exemple:
+for (let i = 1; i <= 5; i++) {
+    console.log("Iteration " + i);
+}
+
+        . La boucle while: Elle continue tant qu'une condition donnée est vraie.
+
+.Syntaxe:
+while (condition) {
+    // Instructions
+}
+.exemple:
+let i = 1;
+while (i <= 5) {
+    console.log("While loop " + i);
+    i++; // Incrémentation pour éviter une boucle infinie
+}
+
+      . La boucle do...while:Similaire à while, sauf qu'elle exécute le bloc d'instructions au moins une fois, même si la condition est fausse.
+
+.Syntaxe:
+do {
+    // Instructions
+} while (condition);
+.Exemple:
+let i = 6;
+do {
+    console.log("Do-While " + i);
+    i++;
+} while (i <= 5);
+
+    . La boucle for...of:Utilisée pour itérer sur les éléments d'une structure itérable (ex. tableaux, chaînes).
+
+.Syntaxe:
+for (let variable of iterable) {
+    // Instructions
+}
+.Exemple:
+let fruits = ["Apple", "Banana", "Cherry"];
+for (let fruit of fruits) {
+    console.log(fruit);
+}
+
+. La boucle for...in:Utilisée pour parcourir les propriétés d'un objet.
+.Syntaxe :
+for (let clé in objet) {
+    // Instructions
+}
+.Exemple:
+let person = { name: "John", age: 30, occupation: "Developer" };
+for (let key in person) {
+    console.log(key + ": " + person[key]);
+}
+
+     . Le mots-clés break: Permet de sortir de la boucle immédiatement.
+
+Exemple avec break :
+for (let i = 1; i <= 5; i++) {
+    if (i === 3) break; // Arrête la boucle quand i vaut 3
+    console.log(i);
+}
+
+_les Conditions:
+Les conditions permettent de prendre des décisions dans un programme en fonction de certaines valeurs ou résultats. Elles contrôlent l'exécution de blocs de code en fonction de la véracité (true/false) d'une expression.
+
+      -la conditions if:
+               Permet d'exécuter un bloc de code si une condition est vraie.
+
+Syntaxe :
+if (condition) {
+    // Instructions si la condition est vraie
+}
+.Exemple
+let age = 18;
+if (age >= 18) {
+    console.log("Vous êtes majeur.");
+}
+   
+   . La condition if...else:Permet d'exécuter un bloc de code si la condition est vraie, et un autre bloc si elle est fausse.
+
+.Syntaxe:
+if (condition) {
+    // Instructions si la condition est vraie
+} else {
+    // Instructions si la condition est fausse
+}
+.Exemple:
+let age = 16;
+if (age >= 18) {
+    console.log("Vous êtes majeur.");
+} else {
+    console.log("Vous êtes mineur.");
+}
+
+. La condition if...else if...else:Permet de vérifier plusieurs conditions successives.
+
+.Syntaxe:
+if (condition1) {
+    // Instructions si condition1 est vraie
+} else if (condition2) {
+    // Instructions si condition2 est vraie
+} else {
+    // Instructions si aucune condition n'est vraie
+}
+.Exemple:
+let score = 75;
+if (score >= 90) {
+    console.log("Excellent !");
+} else if (score >= 70) {
+    console.log("Bien !");
+} else if (score >= 50) {
+    console.log("Moyen.");
+} else {
+    console.log("Insuffisant.");
+}
+       . L'opérateur ternaire (condition ? valeur_si_vrai : valeur_si_faux):Permet de simplifier les conditions simples.
+
+.Syntaxe:
+condition ? valeur_si_vrai : valeur_si_faux;
+
+.Exemple:
+let age = 20;
+let message = age >= 18 ? "Majeur" : "Mineur";
+console.log(message);
+
+         .La condition switch:Permet de tester une valeur contre plusieurs cas possibles.
+.Syntaxe:
+switch (valeur) {
+    case valeur1:
+        // Instructions si valeur === valeur1
+        break;
+    case valeur2:
+        // Instructions si valeur === valeur2
+        break;
+    default:
+        // Instructions si aucune correspondance
+}
+.Exemple: 
+let day = 3;
+switch (day) {
+    case 1:
+        console.log("Lundi");
+        break;
+    case 2:
+        console.log("Mardi");
+        break;
+    case 3:
+        console.log("Mercredi");
+        break;
+    default:
+        console.log("Jour inconnu");
+}
+
+_les fonctions:
+          Une fonction est un bloc de code réutilisable qui exécute une série d'instructions lorsqu'elle est appelée. Les fonctions permettent de structurer et de modulariser le code.
+   -Déclaration d'une fonction:
+        Une fonction qui a un nom unique.
+.Syntaxe:
+function nomDeLaFonction(param1, param2, ...) {
+    // Instructions
+}
+.Exemple:
+function addition(a, b) {
+    return a + b;
+}
+
+console.log(addition(5, 3)); // Affiche : 8
+ 
+ -Les paramètres et valeurs de retour
+   . Paramètres : Des variables que la fonction utilise pour  . .effectuer ses opérations.
+   . Valeur de retour : La valeur qu'une fonction renvoie à l'appelant.
+.Exemple:
+function saluer(nom) {
+    return "Bonjour, " + nom + "!";
+}
+
+console.log(saluer("IKram")); // Affiche : Bonjour, ikram!
+
+-Fonction fléchée (Arrow Function):
+    Les fonctions fléchées offrent une syntaxe concise.
+.syntaxe:
+const nomDeLaFonction = (param1, param2, ...) => {
+    // Instructions
+};
+.Exemple:
+const soustraction = (a, b) => a - b;
+
+console.log(soustraction(10, 3)); // Affiche : 7
+
+
+_Array(tableau) et objet(Object):
+   - Array (Tableau):Un tableau est une collection ordonnée d'éléments indexés numériquement. Les tableaux sont utilisés pour stocker plusieurs valeurs dans une seule variable.
+.syntaxe:
+let tableau = [1, 2, 3, 4, 5]; // Déclaration d'un tableau
+.Exemple:
+let fruits = ["Pomme", "Banane", "Cerise"];
+console.log(fruits[0]); // Affiche : Pomme
+fruits.push("Orange");  // Ajoute "Orange" à la fin
+console.log(fruits);    // Affiche : ["Pomme", "Banane", "Cerise", "Orange"]
+
+
+   -Object(objet):Un objet est une collection non ordonnée de paires clé-valeur. Les objets sont utilisés pour représenter des entités complexes avec des propriétés et des valeurs associées.
+
+.syntaxe:
+let objet = {
+    clé1: valeur1,
+    clé2: valeur2,
+    clé3: valeur3
+};
+.exemple:
+let voiture = {
+    marque: "Toyota",
+    modèle: "Corolla",
+    année: 2020
+};
+console.log(voiture.marque); // Affiche : Toyota
+voiture.couleur = "Rouge";  // Ajoute une propriété
+console.log(voiture);       // Affiche : {marque: "Toyota", modèle: "Corolla", année: 2020, couleur: "Rouge"}
+
+.Exemple combiné (Objet avec un tableau ):
+  1. Objet contenant un tableau :
+let classe = {
+    nom: "6ème année",
+    élèves: ["ikram", "labhaji"]
+};
+console.log(classe.élèves[1]); // Affiche : labhaji
+
+2.Tableau d'objets :
+let voitures = [
+    { marque: "Toyota", modèle: "Corolla" },
+    { marque: "Honda", modèle: "Civic" }
+];
+console.log(voitures[1].marque); // Affiche : Honda
+
+
+_Fonctions prédéfinies pour manipuler les chaînes de caractères:
+     1. length:Renvoie la longueur (nombre de caractères) de la chaîne.
+.Exemple:
+let str = "Bonjour";
+console.log(str.length); // Affiche : 7
+     
+     2. toUpperCase():Convertit tous les caractères de la chaîne en majuscules.
+.Exemple:
+let str = "bonjour";
+console.log(str.toUpperCase()); // Affiche : BONJOUR
+
+     3. toLowerCase():Convertit tous les caractères de la chaîne en minuscules.
+
+.exemple:
+let str = "BONJOUR";
+console.log(str.toLowerCase()); // Affiche : bonjour
+
+4. slice(start, end):Extrait une partie de la chaîne (de start à end, non inclus).
+.exemple:
+let str = "Bonjour tout le monde";
+console.log(str.slice(8, 12)); // Affiche : tout
+
+
+_fonction prédefinie pour les arrays and objects:
+    
+1. Fonctions Prédéfinies pour Arrays (Tableaux)
+     Les tableaux en JavaScript ont de nombreuses méthodes prédéfinies pour les manipuler et les parcourir.
+
+.Méthodes courantes pour les tableaux :
+-push():Ajoute un ou plusieurs éléments à la fin du tableau.	
+-pop():Supprime le dernier élément du tableau et le retourne.	
+-shift():Supprime le premier élément du tableau et le retourne.	
+-unshift():Ajoute un ou plusieurs éléments au début du tableau.	
+-sort():Trie les éléments du tableau (par défaut, en ordre alphabétique).	
+-reverse():Inverse l'ordre des éléments du tableau.	
+-concat():Combine deux tableaux ou plus.	
+-slice():Retourne une copie d'une portion du tableau.	
+-splice():Ajoute ou supprime des éléments à une position donnée.	
+-map():Applique une fonction sur chaque élément et retourne un nouveau tableau.	
+-filter():Retourne un tableau avec les éléments qui respectent une condition.	
+-reduce():Réduit le tableau à une seule valeur en appliquant une fonction.	
+-find():Retourne le premier élément qui satisfait une condition.	
+-findIndex():Retourne l'index du premier élément qui satisfait une condition.	
+-includes():Vérifie si un tableau contient une valeur spécifique.	
+-indexOf()	:Retourne l'index de la première occurrence d'une valeur.	
+
+2. Fonctions Prédéfinies pour Objects (Objets)
+Les objets en JavaScript disposent aussi de méthodes prédéfinies pour manipuler leurs propriétés et valeurs.
+.Méthodes courantes pour les objets :
+-Object.values(obj)	:Retourne un tableau contenant toutes les valeurs de l'objet.	
+-Object.keys(obj):Retourne un tableau contenant toutes les clés de l'objet.	
+
+.Exemple combiné : Array et Object
+-Tableau d'objets :
+let personnes = [
+    { nom: "ikram", age: 23 },
+    { nom: "kawtar", age: 25 },
+    { nom: "meryam", age: 22 }
+];
+
+let noms = personnes.map(personne => personne.nom);
+console.log(noms); // ["ikram", "kawtar", "meryam"]
+
+Objet contenant un tableau :
+let classe = {
+    nom: "6ème année",
+    élèves: ["ikram", "kawtar", "marryam"]
+};
+
+console.log(classe.élèves.length); // Affiche : 3
+console.log(classe.nom);           // Affiche : "6ème année"
+
+
+_Git et Github
+
+1. Qu'est-ce que Git ?
+Git est un logiciel de gestion de version distribué. Il permet de suivre les modifications apportées à des fichiers (souvent dans le contexte de développement logiciel), de collaborer efficacement en équipe et de revenir à des versions antérieures si nécessaire.
+
+-Commandes de base :
+git init: Initialise un dépôt Git dans un répertoire.
+git clone <url>	:Copie un dépôt distant sur votre machine.
+git status	:Montre les modifications en cours.
+git add <fichier>	:Ajoute un fichier à l'index (préparation pour commit).
+git commit -m "message"	:Sauvegarde les modifications avec un message.
+git push	:Envoie les modifications locales vers un dépôt distant.
+git pull	:Récupère et fusionne les modifications du dépôt distant.
+git log	:Affiche l'historique des commits.
+
+2. Qu'est-ce que GitHub ?
+GitHub est une plateforme de collaboration et d'hébergement de code source basée sur Git. Il permet aux développeurs de stocker leurs dépôts Git sur des serveurs en ligne et de collaborer plus facilement avec d'autres développeurs.
+.Caractéristiques principales de GitHub :
+-Hébergement de projets : Stocke le code source dans le cloud.
+-Collaboration : Permet aux équipes de travailler ensemble grâce à des outils comme les pull requests, les issues, et les discussions.
+-Sécurité : Gestion des permissions d'accès pour protéger les dépôts.
+-Documentation : Intégration de fichiers README pour décrire les projets.
+Intégration CI/CD : Connecte le dépôt à des outils d'intégration et de déploiement automatisé.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       
+
+
+
+
+
+
+
