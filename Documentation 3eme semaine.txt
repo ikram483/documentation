@@ -1,0 +1,182 @@
+//Html:
+Le HTML (HyperText Markup Language) est un langage de balisage utilisé pour créer et structurer le contenu des pages web. C'est la base de tout site internet. Grâce à HTML, on peut organiser des textes, des images, des liens, des vidéos, et d'autres éléments pour former une page visible dans un navigateur.
+Principes de base :
+Structure en balises (tags) :
+Les balises sont utilisées pour indiquer le rôle des éléments sur la page.
+.Exemple:
+<h1>Mon Titre</h1> <!-- Titre principal -->
+<p>Voici un paragraphe.</p> <!-- parag -->
+<img src="image.jpg" alt="Description de l'image"> <!-- Pic -->
+<a href="https://ikram.com">link</a> <!-- Link-->
+Documents organisés : 
+.exemple:
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LadieScript</title> <!-- Métadonnées -->
+</head>
+<body>
+    <h1>Hello LadieScript</h1> <!-- Contenu affiché -->
+    <p>Ce texte est affiché sur la page web.</p>
+</body>
+</html>
+À quoi sert HTML ?
+Afficher du contenu : Texte, images, vidéos, etc.
+Créer des liens hypertextes : Relier différentes pages ou sites.
+Construire une structure : Faciliter l'ajout de styles et de fonctionnalités.
+Exemple simple :
+Voici un exemple d'une petite page HTML :
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ma Première Page</title>
+</head>
+<body>
+    <h1>Bienvenue sur ma page !</h1>
+    <p>lor</p>
+    <a href="https://Wikipedia.com">Cliquez ici pour visiter wikipediz </a>
+</body>
+</html>
+//CSS:
+Le CSS (Cascading Style Sheets), ou feuilles de style en cascade, est un langage utilisé pour décrire l'apparence et le style d'un document HTML. Il permet de personnaliser la présentation des pages web, comme la mise en page, les couleurs, les polices, et bien d'autres aspects visuels.
+.Pourquoi utiliser le CSS ?
+ -Séparation du contenu et de la présentation : Le HTML s'occupe du contenu et de la structure, tandis que le CSS gère le style et l'apparence.
+-Personnalisation : Adapter l'aspect des pages web en fonction des besoins ou des préférences des utilisateurs.
+-Réutilisation : Appliquer les mêmes styles à plusieurs pages, ce qui simplifie la maintenance et l'uniformité.
+
+.Comment fonctionne le CSS ?
+Le CSS fonctionne en utilisant des règles de style qui ciblent des éléments HTML et leur appliquent des propriétés.
+
+Exemple de base :
+body {
+            background-color: #f0f0f0; /* Couleur de fond */
+            font-family: Arial, sans-serif; /* Police */
+            color: #333; /* Couleur du texte */
+        }
+        h1 {
+            color: #007BFF; /* Couleur du titre */
+            text-align: center; /* Centrer le texte */
+        }
+        p {
+            font-size: 18px; /* Taille de la police */
+            line-height: 1.6; /* Hauteur des lignes */}
+
+.Structure d'une règle CSS
+-Une règle CSS est composée de :
+
+Un sélecteur qui cible un ou plusieurs éléments HTML.
+Une ou plusieurs propriétés avec leurs valeurs.            
+.exemple:
+h1 {
+    color: blue; /* Propriété : couleur */
+    font-size: 24px; /* Propriété : taille de la police */
+}
+
+.Moyens d'intégrer le CSS :
+CSS en ligne : Dans les balises HTML directement (pas recommandé pour de grands projets).
+
+html
+Copy code
+<h1 style="color: red;">Titre rouge</h1>
+CSS interne : Dans une balise <style> dans l'en-tête HTML.
+
+html
+Copy code
+<style>
+    p { color: green; }
+</style>
+CSS externe : Dans un fichier .css séparé lié à la page HTML.
+
+html
+Copy code
+<link rel="stylesheet" href="styles.css">
+Et dans le fichier styles.css :
+
+css
+Copy code
+body {
+    background-color: #f4f4f4;
+}
+
+
+Quelques propriétés CSS courantes :
+Couleurs et arrière-plan :
+color, background-color, background-image.
+
+Texte :
+font-size, font-family, text-align, font-weight.
+
+Espacement :
+margin, padding.
+
+Mise en page :
+display, flex, grid, position.
+
+
+//DOM:
+Le DOM (Document Object Model, ou Modèle d'Objet de Document) est une interface de programmation qui représente la structure d'un document HTML ou XML sous forme d'arborescence. Grâce au DOM, les développeurs peuvent interagir avec les éléments d'une page web, les modifier, les ajouter ou les supprimer dynamiquement à l'aide de langages comme JavaScript.
+
+Comment fonctionne le DOM ?
+Représentation en arbre : Le DOM représente une page web comme un arbre hiérarchique où chaque élément HTML est un nœud.
+Exemple d'un document HTML simple :
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exemple DOM</title>
+    </head>
+    <body>
+        <h1>Titre</h1>
+        <p>Paragraphe</p>
+    </body>
+</html>
+
+Représentation DOM :
+Document
+└── html
+    ├── head
+    │   └── title
+    └── body
+        ├── h1
+        └── p
+.Accès programmatique :
+Avec JavaScript, vous pouvez accéder à n'importe quel élément du DOM pour lire ou modifier ses propriétés. Par exemple :
+const titre = document.querySelector('h1');
+titre.textContent = 'Nouveau Titre'; // Change le texte du <h1>
+
+.Pourquoi le DOM est-il important ?
+Le DOM permet de :
+
+Modifier le contenu d'une page en temps réel.
+Réagir aux interactions des utilisateurs, comme des clics ou des saisies.
+Créer, supprimer ou déplacer des éléments HTML ou attributs.
+Contrôler les styles dynamiquement.
+
+.Les principaux concepts du DOM :
+Nœuds (Nodes) :
+
+Document Node : Représente l'ensemble du document (par exemple, document en JavaScript).
+Element Nodes : Représentent les balises HTML comme <div>, <p>, etc.
+Text Nodes : Contiennent le texte à l'intérieur des éléments.
+API DOM (Interfaces JavaScript) :
+
+document.getElementById(id) : Sélectionne un élément par son id.
+document.querySelector(selector) : Sélectionne le premier élément correspondant à un sélecteur CSS.
+element.textContent : Lit ou modifie le texte d'un élément.
+element.style : Applique des styles directement à un élément.
+Événements : Le DOM permet d'écouter et de réagir aux événements (clics, saisies, survols, etc.). Exemple :
+
+const button = document.querySelector('button');
+button.addEventListener('click', () => {
+    alert('Bouton cliqué !');
+});
+
+.Création et suppression d'éléments :
+
+Créer : document.createElement(tag)
+Ajouter : parent.appendChild(element)
+Supprimer : parent.removeChild(element)
+
+.Avantages du DOM :
+Interactivité accrue grâce aux manipulations dynamiques.
+Possibilité de créer des applications web dynamiques comme des jeux ou des interfaces réactives.
+Accès détaillé à la structure et aux styles du document.
